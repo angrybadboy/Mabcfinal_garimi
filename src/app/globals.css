@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+@theme {
+  /* 브랜드 컬러 */
+  --color-brand-50: #f0f7ff;
+  --color-brand-100: #e0effe;
+  --color-brand-200: #b9dffd;
+  --color-brand-300: #7cc5fb;
+  --color-brand-400: #36a9f9;
+  --color-brand-500: #0c8ee3;
+  --color-brand-600: #0070c2;
+  --color-brand-700: #01599f;
+  --color-brand-800: #064c83;
+  --color-brand-900: #0b406d;
+
+  /* 마스킹 강조 (개인정보 하이라이트) */
+  --color-mask-50: #fff8e6;
+  --color-mask-100: #ffefc2;
+  --color-mask-200: #ffdc88;
+  --color-mask-300: #ffce55;
+  --color-mask-400: #f5b93d;
+  --color-mask-500: #e8a42b;
+  --color-mask-600: #c9821e;
+  --color-mask-700: #a5661a;
+  --color-mask-800: #845119;
+  --color-mask-900: #694217;
+
+  /* 상태 컬러 */
+  --color-success-50: #f0fdf4;
+  --color-success-500: #22c55e;
+  --color-success-600: #16a34a;
+  --color-warning-50: #fffbeb;
+  --color-warning-500: #f59e0b;
+  --color-warning-600: #d97706;
+  --color-error-50: #fef2f2;
+  --color-error-500: #ef4444;
+  --color-error-600: #dc2626;
+
+  /* 가림 문자 배경 */
+  --color-redact-bg: #1f2937;
+  --color-redact-text: #6b7280;
+
+  /* 커스텀 폰트 */
+  --font-sans: var(--font-noto-sans-kr), "Apple SD Gothic Neo", "Noto Sans KR", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", monospace;
+
+  /* 그림자 */
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-card-hover: 0 4px 12px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.04);
+  --shadow-drop: 0 8px 24px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+  --shadow-elevated: 0 12px 32px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* 기본 스타일 */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #f8fafc;
+  color: #1e293b;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 커스텀 스크롤바 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* 텍스트 선택 */
+::selection {
+  background-color: var(--color-brand-200);
+  color: var(--color-brand-900);
+}
+
+/* 포커스 가시성 */
+*:focus-visible {
+  outline: 2px solid var(--color-brand-500);
+  outline-offset: 2px;
+}
+
+/* 가림 문자 스타일 */
+.redacted {
+  background-color: var(--color-redact-bg);
+  color: var(--color-redact-text);
+  border-radius: 2px;
+  padding: 0 1px;
+  user-select: none;
+}
+
+/* 문서 뷰어 하이라이트 */
+.document-highlight {
+  background-color: var(--color-mask-300);
+  border-radius: 2px;
+  padding: 0 1px;
+}
+
+/* 드래그 선택 중 */
+.drag-select {
+  background-color: var(--color-mask-200);
+  border: 2px dashed var(--color-mask-500);
+  border-radius: 2px;
+  cursor: crosshair;
+}
