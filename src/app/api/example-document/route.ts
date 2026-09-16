@@ -3,7 +3,7 @@ import { Document, Packer, Paragraph, TextRun, HeadingLevel, AlignmentType, Tabl
 import { mkdir, writeFile, readFile, unlink } from 'fs/promises'
 import { join } from 'path'
 
-const TMP_DIR = join(process.cwd(), 'tmp')
+const TMP_DIR = '/tmp'
 
 async function ensureDir(dir: string) {
   try {

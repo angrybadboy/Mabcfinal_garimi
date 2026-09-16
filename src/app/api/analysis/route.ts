@@ -6,7 +6,7 @@ import { DEFAULT_METHOD_BY_TYPE } from '@/types'
 
 const UPSTAGE_API_KEY = process.env.UPSTAGE_API_KEY
 const UPSTAGE_API_BASE = 'https://api.upstage.ai/v1'
-const TMP_DIR = join(process.cwd(), 'tmp')
+const TMP_DIR = '/tmp'
 
 async function ensureDir(dir: string) {
   try {
